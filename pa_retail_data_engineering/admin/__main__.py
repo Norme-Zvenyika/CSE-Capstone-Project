@@ -40,7 +40,7 @@ def main():
                 db.drop_tables()
             elif choice == '3':
                 # replace this file with where your json are located.
-                start_path = r"/mnt/c/Users/norma/OneDrive - Lehigh University/Desktop/BS BIOC Engineering/Spring 2024/CSE 281/Capstone/Individual Work/"
+                start_path = r"" # should be where the json files are located
                 file_path = file_navigator.navigate_and_select_file(start_path)
                 extracted_instance = Extractor(file_path).extracted_class()
             elif choice == '4':
