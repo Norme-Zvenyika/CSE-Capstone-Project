@@ -1,1 +1,1 @@
-# You need the downloaded directories to be able to run the analysis scripts
+# You need the downloaded directories to be able to run the script which generates the daily medians files
