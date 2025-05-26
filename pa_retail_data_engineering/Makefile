@@ -1,8 +1,17 @@
-PYTHON      := python3
+UNAME_S := $(shell uname -s)
+ifeq ($(OS),Windows_NT)
+    PYTHON := python
+    ZIP := powershell -Command "Compress-Archive -Path $(OUTPUT_PATH)\* -DestinationPath cleaned_datafiles.zip"
+else
+    PYTHON := python3
+    ZIP := zip -r cleaned_datafiles.zip $(OUTPUT_PATH)
+endif
+
 START_PATH  ?= ./original_datasets
 OUTPUT_PATH ?= ./datafiles
 
 .PHONY: run load_all zip_datafiles
+
 run:
 	@echo ">> running data-pipeline"
 	@echo ">> start-path:  $(strip $(START_PATH))"
@@ -21,4 +30,5 @@ load_all:
 		--auto-load-all
 
 zip_datafiles:
-	zip -r cleaned_datafiles.zip datafiles
+	@echo ">> zipping datafiles"
+	@$(ZIP)
