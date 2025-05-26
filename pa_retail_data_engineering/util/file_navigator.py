@@ -36,4 +36,5 @@ def navigate_and_select_file(start_path):
                 history.append(current_path)
             else:
                 print(f"\nYou selected the file: {selected_path}")
-                return selected_path
+                year_dir = os.path.basename(os.path.normpath(current_path))
+                return selected_path, year_dir
