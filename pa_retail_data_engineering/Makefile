@@ -21,4 +21,4 @@ load_all:
 		--auto-load-all
 
 zip_datafiles:
-	zip -r cleaned_datafiles1.zip datafiles
+	zip -r cleaned_datafiles.zip datafiles
