@@ -2,7 +2,7 @@ PYTHON      := python3
 START_PATH  ?= ./original_datasets
 OUTPUT_PATH ?= ./datafiles
 
-.PHONY: run load_all
+.PHONY: run load_all zip_datafiles
 run:
 	@echo ">> running data-pipeline"
 	@echo ">> start-path:  $(strip $(START_PATH))"
@@ -19,3 +19,6 @@ load_all:
 		--start-path ../pa_retail_data_engineering/original_datasets \
 		--output-path "$(strip $(OUTPUT_PATH))" \
 		--auto-load-all
+
+zip_datafiles:
+	zip -r cleaned_datafiles1.zip datafiles
